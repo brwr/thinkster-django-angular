@@ -43,8 +43,8 @@
        * @name postsSuccessFn
        * @desc Update thoughts array on view
        */
-      function postsSuccessFn(data, status, headers, config) {
-        vm.posts = data.data;
+      function postsSuccessFn(response) {
+        vm.posts = response.data;
       }
 
 
@@ -52,8 +52,8 @@
        * @name postsErrorFn
        * @desc Show snackbar with error
        */
-      function postsErrorFn(data, status, headers, config) {
-        Snackbar.error(data.error);
+      function postsErrorFn(response) {
+        Snackbar.error(response.data.detail);
       }
     }
   }

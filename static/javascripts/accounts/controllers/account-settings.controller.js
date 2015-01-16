@@ -53,15 +53,15 @@
        * @name accountSuccessFn
        * @desc Update `account` for view
        */
-      function accountSuccessFn(data, status, headers, config) {
-        vm.account = data.data;
+      function accountSuccessFn(response) {
+        vm.account = response.data;
       }
 
       /**
        * @name accountErrorFn
        * @desc Redirect to index
        */
-      function accountErrorFn(data, status, headers, config) {
+      function accountErrorFn(response) {
         $location.url('/');
         Snackbar.error('That user does not exist.');
       }
@@ -80,7 +80,7 @@
        * @name accountSuccessFn
        * @desc Redirect to index and display success snackbar
        */
-      function accountSuccessFn(data, status, headers, config) {
+      function accountSuccessFn(response) {
         Authentication.unauthenticate();
         window.location = '/';
 
@@ -92,8 +92,8 @@
        * @name accountErrorFn
        * @desc Display error snackbar
        */
-      function accountErrorFn(data, status, headers, config) {
-        Snackbar.error(data.error);
+      function accountErrorFn(response) {
+        Snackbar.error(response.data.detail);
       }
     }
 
@@ -112,7 +112,7 @@
        * @name accountSuccessFn
        * @desc Show success snackbar
        */
-      function accountSuccessFn(data, status, headers, config) {
+      function accountSuccessFn(response) {
         Snackbar.show('Your account has been updated.');
       }
 
@@ -121,8 +121,8 @@
        * @name accountErrorFn
        * @desc Show error snackbar
        */
-      function accountErrorFn(data, status, headers, config) {
-        Snackbar.error(data.error);
+      function accountErrorFn(response) {
+        Snackbar.error(response.data.detail);
       }
     }
   }

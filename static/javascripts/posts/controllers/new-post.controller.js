@@ -41,7 +41,7 @@
        * @name createPostSuccessFn
        * @desc Show snackbar with success message
        */
-      function createPostSuccessFn(data, status, headers, config) {
+      function createPostSuccessFn(response) {
         Snackbar.show('Success! Post created.');
       }
 
@@ -50,9 +50,9 @@
        * @name createPostErrorFn
        * @desc Propogate error event and show snackbar with error message
        */
-      function createPostErrorFn(data, status, headers, config) {
+      function createPostErrorFn(response) {
         $rootScope.$broadcast('post.created.error');
-        Snackbar.error(data.error);
+        Snackbar.error(response.data.detail);
       }
     }
   }

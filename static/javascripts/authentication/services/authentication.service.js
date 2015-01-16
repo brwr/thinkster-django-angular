@@ -77,8 +77,8 @@
        * @name loginSuccessFn
        * @desc Set the authenticated account and redirect to index
        */
-      function loginSuccessFn(data, status, headers, config) {
-        Authentication.setAuthenticatedAccount(data.data);
+      function loginSuccessFn(response) {
+        Authentication.setAuthenticatedAccount(response.data);
 
         window.location = '/';
       }
@@ -87,7 +87,7 @@
        * @name loginErrorFn
        * @desc Log "Epic failure!" to the console
        */
-      function loginErrorFn(data, status, headers, config) {
+      function loginErrorFn(response) {
         console.error('Epic failure!');
       }
     }
@@ -107,7 +107,7 @@
        * @name logoutSuccessFn
        * @desc Unauthenticate and redirect to index with page reload
        */
-      function logoutSuccessFn(data, status, headers, config) {
+      function logoutSuccessFn(response) {
         Authentication.unauthenticate();
 
         window.location = '/';
@@ -117,7 +117,7 @@
        * @name logoutErrorFn
        * @desc Log "Epic failure!" to the console
        */
-      function logoutErrorFn(data, status, headers, config) {
+      function logoutErrorFn(response) {
         console.error('Epic failure!');
       }
     }
@@ -143,7 +143,7 @@
       * @name registerSuccessFn
       * @desc Log the new user in
       */
-      function registerSuccessFn(data, status, headers, config) {
+      function registerSuccessFn(response) {
         Authentication.login(email, password);
       }
 
@@ -151,7 +151,7 @@
       * @name registerErrorFn
       * @desc Log "Epic failure!" to the console
       */
-      function registerErrorFn(data, status, headers, config) {
+      function registerErrorFn(response) {
         console.error('Epic failure!');
       }
     }

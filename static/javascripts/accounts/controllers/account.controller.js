@@ -37,8 +37,8 @@
       * @name accountSuccessAccount
       * @desc Update `account` on viewmodel
       */
-      function accountSuccessFn(data, status, headers, config) {
-        vm.account = data.data;
+      function accountSuccessFn(response) {
+        vm.account = response.data;
       }
 
 
@@ -46,7 +46,7 @@
       * @name accountErrorFn
       * @desc Redirect to index and show error Snackbar
       */
-      function accountErrorFn(data, status, headers, config) {
+      function accountErrorFn(response) {
         $location.url('/');
         Snackbar.error('That user does not exist.');
       }
@@ -56,8 +56,8 @@
         * @name postsSucessFn
         * @desc Update `posts` on viewmodel
         */
-      function postsSuccessFn(data, status, headers, config) {
-        vm.posts = data.data;
+      function postsSuccessFn(response) {
+        vm.posts = response.data;
       }
 
 
@@ -65,8 +65,8 @@
         * @name postsErrorFn
         * @desc Show error snackbar
         */
-      function postsErrorFn(data, status, headers, config) {
-        Snackbar.error(data.data.error);
+      function postsErrorFn(response) {
+        Snackbar.error(response.data.detail);
       }
     }
   }
