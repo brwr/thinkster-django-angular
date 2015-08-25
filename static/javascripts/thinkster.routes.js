@@ -24,6 +24,9 @@
       controller: 'LoginController',
       controllerAs: 'vm',
       templateUrl: '/static/templates/authentication/login.html'
+    }).when('/translocatome/query', {
+      controller: 'TranslocatomeQueryController',
+      templateUrl: '/static/templates/translocatome/query.html'
     }).when('/+:username', {
       controller: 'AccountController',
       controllerAs: 'vm',

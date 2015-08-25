@@ -9,6 +9,7 @@
       'thinkster.authentication',
       'thinkster.layout',
       'thinkster.posts',
+      'thinkster.translocatome',
       'thinkster.utils'
     ]);
 
