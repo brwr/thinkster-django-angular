@@ -24,6 +24,12 @@
       controller: 'LoginController',
       controllerAs: 'vm',
       templateUrl: '/static/templates/authentication/login.html'
+    }).when('/translocatome/interaction', {
+      controller: 'TranslocatomeInteractionController',
+      templateUrl: '/static/templates/translocatome/interaction.html'
+    }).when('/translocatome/node', {
+      controller: 'TranslocatomeNodeController',
+      templateUrl: '/static/templates/translocatome/node.html'
     }).when('/+:username', {
       controller: 'AccountController',
       controllerAs: 'vm',

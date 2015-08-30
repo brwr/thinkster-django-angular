@@ -30,3 +30,64 @@
 .account .account__username {
   font-weight: bold;
 }
+
+.source {
+  background-color: #2ecc71;
+}
+
+.target {
+  background-color: #9b59b6;
+}
+
+.node-container {
+  padding: 30px;
+  margin: 10px;
+}
+
+.typeahead-status {
+  height: 20px;
+}
+
+.control-label {
+  padding-top: 5px;
+  padding-left: 60px;
+  padding-right: 0px;
+}
+
+.node-buttons {
+  height: 56px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.swap-button {
+  margin-top: 60px;
+  font-size: 40px;
+  display:block;
+  text-align:center
+}
+
+.interactions {
+  background-color: #3498db;
+  padding: 30px;
+  margin: 10px;
+}
+
+.toggle-show {
+  cursor: pointer;
+}
+
+.chevron-btn {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.draggable-column-container {
+  display: inline-block;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.clear {
+  cursor: pointer;
+}

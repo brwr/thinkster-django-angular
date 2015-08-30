@@ -7,10 +7,14 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">Not Google Plus</a>
+      <a class="navbar-brand" href="/">Translocatome</a>
     </div> <!-- ./navbar-header -->
 
     <div class="collapse navbar-collapse" id="we-are-borg-navbar">
+      <ul class="nav navbar-nav">
+        <li><a href="/translocatome/interaction">Interaction</a></li>
+        <li><a href="/translocatome/node">Node</a></li>
+      </ul>
       <ul class="nav navbar-nav pull-right">
         {% if user.is_authenticated %}
           <li><a href="/+{{ user.username }}">+{{ user.username }}</a></li>

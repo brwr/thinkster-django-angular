@@ -1,0 +1,215 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="source node-container">
+                <div class="container-fluid">
+                    <div class="row">
+                        <h3>Source Node<span ng-show="sourceNode.id"> | <a href="http://www.uniprot.org/uniprot/{{ sourceNode.uni_prot_ac }}" target="_blank">open on UniProt</a></span></h3>
+                    </div>
+                    <form class=".form-horizontal">
+                        <div class="row">
+                            <div class="form-group">
+                                <label class="control-label col-sm-4" for="source_uni_prot_ac">UniProt AC:</label>
+                                <div class="col-sm-8">
+                                    <input
+                                            class="form-control"
+                                            ng-model="sourceNode.uni_prot_ac"
+                                            type="text"
+                                            id="source_uni_prot_ac"
+                                            placeholder="Start typing the Uni Prot AC!"
+                                            typeahead="node as node.uni_prot_ac for node in queryNodesByUniProtAc($viewValue)| limitTo:8"
+                                            typeahead-loading="loadingNodes.source_uni_prot_ac"
+                                            typeahead-no-results="noResults.source_uni_prot_ac"
+                                            typeahead-on-select="onSourceSelect($item)"
+                                            typeahead-min-length="3"
+                                            ng-disabled="sourceNode.id"
+                                            />
+                                    <div class="typeahead-status">
+                                        <i ng-show="loadingNodes.source_uni_prot_ac" class="glyphicon glyphicon-refresh"></i>
+                                        <div ng-show="noResults.source_uni_prot_ac">
+                                            <i class="glyphicon glyphicon-remove"></i> No Results Found
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label class="control-label col-sm-4" for="source_gene_name">Gene Name:</label>
+                                <div class="col-sm-8">
+                                    <input
+                                            class="form-control"
+                                            ng-model="sourceNode.gene_name"
+                                            type="text"
+                                            id="source_gene_name"
+                                            placeholder="Start typing the Gene name!"
+                                            typeahead="node as node.gene_name for node in queryNodesByGeneName($viewValue)| limitTo:8"
+                                            typeahead-loading="loadingNodes.source_gene_name"
+                                            typeahead-no-results="noResults.source_gene_name"
+                                            typeahead-on-select="onSourceSelect($item)"
+                                            typeahead-min-length="3"
+                                            ng-disabled="sourceNode.id"
+                                            />
+                                    <div class="typeahead-status">
+                                        <i ng-show="loadingNodes.source_gene_name" class="glyphicon glyphicon-refresh"></i>
+                                        <div ng-show="noResults.source_gene_name">
+                                            <i class="glyphicon glyphicon-remove"></i> No Results Found
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="node-buttons">
+                            <span ng-show="sourceNode && sourceNode.id">
+                                <a class="btn btn-danger" ng-click="sourceNode=undefined">Forget node</a>
+                            </span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1">
+            <div class="swap-button">
+                <a ng-click="swapNodes()"><i class="glyphicon glyphicon-transfer"></i></a>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="target node-container">
+                <div class="container-fluid">
+                    <div class="row">
+                        <h3>Target Node<span ng-show="targetNode.id"> | <a href="http://www.uniprot.org/uniprot/{{ targetNode.uni_prot_ac }}" target="_blank">open on UniProt</a></span></h3>
+                    </div>
+                    <form class=".form-horizontal">
+                        <div class="row">
+                            <div class="form-group">
+                                <label class="control-label col-sm-4" for="target_uni_prot_ac">UniProt AC:</label>
+                                <div class="col-sm-8">
+                                    <input
+                                            class="form-control"
+                                            ng-model="targetNode.uni_prot_ac"
+                                            type="text"
+                                            id="target_uni_prot_ac"
+                                            placeholder="Start typing the Uni Prot AC!"
+                                            typeahead="node as node.uni_prot_ac for node in queryNodesByUniProtAc($viewValue)| limitTo:8"
+                                            typeahead-loading="loadingNodes.target_uni_prot_ac"
+                                            typeahead-no-results="noResults.target_uni_prot_ac"
+                                            typeahead-on-select="onTargetSelect($item)"
+                                            typeahead-min-length="3"
+                                            ng-disabled="targetNode.id"
+                                            />
+                                    <div class="typeahead-status">
+                                        <i ng-show="loadingNodes.target_uni_prot_ac" class="glyphicon glyphicon-refresh"></i>
+                                        <div ng-show="noResults.target_uni_prot_ac">
+                                            <i class="glyphicon glyphicon-remove"></i> No Results Found
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label class="control-label col-sm-4" for="target_gene_name">Gene Name:</label>
+                                <div class="col-sm-8">
+                                    <input
+                                            class="form-control"
+                                            ng-model="targetNode.gene_name"
+                                            type="text"
+                                            id="target_gene_name"
+                                            placeholder="Start typing the gene name!"
+                                            typeahead="node as node.gene_name for node in queryNodesByGeneName($viewValue)| limitTo:8"
+                                            typeahead-loading="loadingNodes.target_gene_name"
+                                            typeahead-no-results="noResults.target_gene_name"
+                                            typeahead-on-select="onTargetSelect($item)"
+                                            typeahead-min-length="3"
+                                            ng-disabled="targetNode.id"
+                                            />
+                                    <div class="typeahead-status">
+                                        <i ng-show="loadingNodes.target_gene_name" class="glyphicon glyphicon-refresh"></i>
+                                        <div ng-show="noResults.target_gene_name">
+                                            <i class="glyphicon glyphicon-remove"></i> No Results Found
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="node-buttons">
+                            <span ng-show="targetNode && targetNode.id">
+                                <a class="btn btn-danger" ng-click="targetNode=undefined">Forget node</a>
+                            </span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="interactions">
+            <div class="container-fluid">
+                <div class="row">
+                    <h3>Interactions <a class="btn btn-success" ng-click="fetchInteractionsWithMeta()">Fetch interactions</a></h3>
+                </div>
+                <div class="row" ng-show="selectedInteraction">
+                    <div class="interaction-info">
+                        <!-- Selected interaction here maybe show the first interaction by default?-->
+                    </div>
+                </div>
+                <div class="row">
+                    <p class="toggle-show"><a ng-click="showColumnSorter=!showColumnSorter"><i class="chevron-btn glyphicon" ng-class="{'glyphicon-chevron-right': showColumnSorter, 'glyphicon-chevron-down': !showColumnSorter}"></i>Columns</a></p>
+                    <div ng-show="showColumnSorter">
+                        <ul ui-sortable ng-model="interactionColumns">
+                            <li ng-repeat="(columnIndex, column) in interactionColumns" class="draggable-column-container">
+                                <div class="btn btn-primary">{{ column }} <a class="btn-danger"><i class="glyphicon glyphicon-remove" ng-click="removeColumn(columnIndex)"></i></a></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="hits" ng-show="interactions_with_meta">
+                        <scrollable-table watch="interactions_with_meta">
+                            <table class="table table-striped table-bordered">
+                                <thead>
+                                <tr>
+                                    <th sortable-header col="interaction_type">Interaction type</th>
+                                    <th sortable-header col="edge_type">Edge type</th>
+                                    <th sortable-header col="directness">Directness</th>
+                                    <th sortable-header col="biological_process">Biological process</th>
+                                    <th sortable-header col="score">Score</th>
+                                    <th sortable-header col="is_in_full">Is in full</th>
+                                    <th sortable-header col="is_in_medium">Is in medium</th>
+                                    <th sortable-header col="is_in_small">Is in small</th>
+                                    <th sortable-header col="is_in_skeleton">Is in skeleton</th>
+                                    <th sortable-header col="entry_state">Entry state</th>
+                                    <th sortable-header col="reviewed">Reviewed</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr
+                                        ng-repeat="interaction_with_meta in interactions_with_meta"
+                                        row-id="{{ interaction_with_meta.id }}"
+                                        ng-class="{info: selectedInteraction.id == interaction_with_meta.id}"
+                                        >
+                                    <td>{{ interaction_with_meta.interaction_type }}</td>
+                                    <td>{{ interaction_with_meta.edge_type }}</td>
+                                    <td>{{ interaction_with_meta.directness }}</td>
+                                    <td>{{ interaction_with_meta.biological_process }}</td>
+                                    <td>{{ interaction_with_meta.score }}</td>
+                                    <td>{{ interaction_with_meta.is_in_full ? 'yes' : 'no' }}</td>
+                                    <td>{{ interaction_with_meta.is_in_medium ? 'yes' : 'no' }}</td>
+                                    <td>{{ interaction_with_meta.is_in_small ? 'yes' : 'no' }}</td>
+                                    <td>{{ interaction_with_meta.is_in_skeleton ? 'yes' : 'no' }}</td>
+                                    <td>{{ interaction_with_meta.meta.entry_state }}</td>
+                                    <td>{{ interaction_with_meta.meta.reviewed ? 'yes' : 'no' }}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </scrollable-table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
