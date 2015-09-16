@@ -11,12 +11,19 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "~1.3.1",
-    "angular-route": "~1.3.1",
-    "angular-cookies": "~1.3.1",
+    "angular": "~1.4.5",
+    "angular-bootstrap": "~0.13.3",
+    "angular-cookies": "~1.4.5",
+    "angular-growl": "~0.4.0",
+    "angular-route": "~1.4.5",
+    "angular-scrollable-table": "*",
+    "angular-ui-router": "~0.2.15",
+    "angular-ui-sortable": "~0.13.4",
     "bootstrap": "~3.3.0",
     "bootstrap-material-design": "~0.1.5",
     "jquery": "~2.1.1",
-    "ngDialog": "~0.3.3"
+    "jquery-ui": "~1.11.4",
+    "ngDialog": "~0.5.1",
+    "underscore": "~1.8.3"
   }
 }

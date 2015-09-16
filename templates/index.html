@@ -1,22 +1,19 @@
 <!DOCTYPE html>
 <html ng-app="thinkster">
 <head>
-  <title>thinkster-django-angular-boilerplate</title>
+    <title>thinkster-django-angular-boilerplate</title>
 
-  <base href="/" />
+    <base href="/"/>
 
-  {% include 'stylesheets.html' %}
+    {% include 'stylesheets.html' %}
 </head>
 
 <body>
-  {% include 'navbar.html' %}
+<div growl></div>
+{% include 'navbar.html' %}
 
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-xs-12 ng-view"></div>
-    </div>
-  </div>
+<div ui-view></div>
 
-  {% include 'javascripts.html' %}
+{% include 'javascripts.html' %}
 </body>
 </html>

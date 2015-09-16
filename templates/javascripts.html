@@ -3,14 +3,24 @@
 
 {% compress js %}
 <script type="text/javascript" src="{% static 'bower_components/jquery/dist/jquery.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/jquery-ui/jquery-ui.js' %}"></script>
 <script type="text/javascript" src="{% static 'bower_components/underscore/underscore.js' %}"></script>
 <script type="text/javascript" src="{% static 'bower_components/bootstrap/dist/js/bootstrap.js' %}"></script>
-<script type="text/javascript" src="{% static 'bower_components/bootstrap-material-design/dist/js/material.js' %}"></script>
-<script type="text/javascript" src="{% static 'bower_components/bootstrap-material-design/dist/js/ripples.js' %}"></script>
+<script type="text/javascript"
+        src="{% static 'bower_components/bootstrap-material-design/dist/js/material.js' %}"></script>
+<script type="text/javascript"
+        src="{% static 'bower_components/bootstrap-material-design/dist/js/ripples.js' %}"></script>
 
 <script type="text/javascript" src="{% static 'bower_components/angular/angular.js' %}"></script>
-<script type="text/javascript" src="{% static 'bower_components/angular-route/angular-route.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular-bootstrap/ui-bootstrap-tpls.js' %}"></script>
 <script type="text/javascript" src="{% static 'bower_components/angular-cookies/angular-cookies.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular-route/angular-route.js' %}"></script>
+<script type="text/javascript"
+        src="{% static 'bower_components/angular-scrollable-table/angular-scrollable-table.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular-ui-sortable/sortable.js' %}"></script>
+<script type="text/javascript"
+        src="{% static 'bower_components/angular-ui-router/release/angular-ui-router.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular-growl/build/angular-growl.js' %}"></script>
 
 <script type="text/javascript" src="{% static 'bower_components/ngDialog/js/ngDialog.js' %}"></script>
 <script type="text/javascript" src="{% static 'lib/snackbarjs/snackbar.min.js' %}"></script>
@@ -22,11 +32,14 @@
 <script type="text/javascript" src="{% static 'javascripts/accounts/accounts.module.js' %}"></script>
 <script type="text/javascript" src="{% static 'javascripts/accounts/services/account.service.js' %}"></script>
 <script type="text/javascript" src="{% static 'javascripts/accounts/controllers/account.controller.js' %}"></script>
-<script type="text/javascript" src="{% static 'javascripts/accounts/controllers/account-settings.controller.js' %}"></script>
+<script type="text/javascript"
+        src="{% static 'javascripts/accounts/controllers/account-settings.controller.js' %}"></script>
 
 <script type="text/javascript" src="{% static 'javascripts/authentication/authentication.module.js' %}"></script>
-<script type="text/javascript" src="{% static 'javascripts/authentication/services/authentication.service.js' %}"></script>
-<script type="text/javascript" src="{% static 'javascripts/authentication/controllers/register.controller.js' %}"></script>
+<script type="text/javascript"
+        src="{% static 'javascripts/authentication/services/authentication.service.js' %}"></script>
+<script type="text/javascript"
+        src="{% static 'javascripts/authentication/controllers/register.controller.js' %}"></script>
 <script type="text/javascript" src="{% static 'javascripts/authentication/controllers/login.controller.js' %}"></script>
 
 <script type="text/javascript" src="{% static 'javascripts/layout/layout.module.js' %}"></script>
@@ -39,6 +52,16 @@
 <script type="text/javascript" src="{% static 'javascripts/posts/directives/post.directive.js' %}"></script>
 <script type="text/javascript" src="{% static 'javascripts/posts/controllers/posts.controller.js' %}"></script>
 <script type="text/javascript" src="{% static 'javascripts/posts/controllers/new-post.controller.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'javascripts/translocatome/translocatome.module.js' %}"></script>
+<script type="text/javascript"
+        src="{% static 'javascripts/translocatome/controllers/translocatome.interaction.controller.js' %}"></script>
+    <script type="text/javascript"
+            src="{% static 'javascripts/translocatome/controllers/translocatome.interaction.editor.controller.js' %}"></script>
+<script type="text/javascript"
+        src="{% static 'javascripts/translocatome/controllers/translocatome.node.controller.js' %}"></script>
+<script type="text/javascript"
+        src="{% static 'javascripts/translocatome/controllers/translocatome.node.editor.controller.js' %}"></script>
 
 <script type="text/javascript" src="{% static 'javascripts/utils/utils.module.js' %}"></script>
 <script type="text/javascript" src="{% static 'javascripts/utils/services/snackbar.service.js' %}"></script>

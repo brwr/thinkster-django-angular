@@ -1,0 +1,44 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-5"><h3>Interaction</h3></div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="container-fluid">
+                <div class="row">
+                    <h4>Source</h4>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        {{ interaction.source_node.uni_prot_ac }}
+                    </div>
+                    <div class="col-md-6">
+                        {{ interaction.source_node.gene_name }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="container-fluid">
+                <div class="row">
+                    <h4>Target</h4>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        {{ interaction.target_node.uni_prot_ac }}
+                    </div>
+                    <div class="col-md-6">
+                        {{ interaction.target_node.gene_name }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <button class="btn btn-success" ng-click="save()">Save changes</button>
+            <button class="btn btn-danger" ng-click="deleteInteraction()">Delte node</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+    </div>
+</div>

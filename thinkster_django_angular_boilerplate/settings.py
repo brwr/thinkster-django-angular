@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'compressor',
     'authentication',
     'posts',
+    'translocatome',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -51,6 +52,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'thinkster_django_angular_boilerplate.middlewares.ExceptionLoggingMiddleware',
 )
 
 ROOT_URLCONF = 'thinkster_django_angular_boilerplate.urls'
@@ -90,7 +92,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = 'staticfiles'
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'dist/static'),
+    # os.path.join(BASE_DIR, 'dist/static'),
     os.path.join(BASE_DIR, 'static'),
 )
 
@@ -109,7 +111,7 @@ TEMPLATE_DIRS = (
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.SessionAuthentication',
-    )
+    ),
 }
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
